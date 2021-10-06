@@ -11,6 +11,7 @@ public enum ItemType
    Equipment, //flashligth
    PuzzelClue, //items that are clues for the puzzles
    PuzzlePart, //items that are part of the puzzles
+   defaultObject, //random items you can find
 
 }
 
