@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory" )]
 public class InventoryObject : ScriptableObject
 {
     public List<InventorySlot> Container = new List<InventorySlot>(); //a list that contains all the items in the inventory
@@ -16,9 +17,9 @@ public class InventoryObject : ScriptableObject
                 hasItem = true;
                 break;
             }
-            if (!hasItem)
+            if (!hasItem) //is used if the item does not already exist in the inventory
             {
-
+                Container.Add(new InventorySlot(_item, _amount));
             }
         }
     }
