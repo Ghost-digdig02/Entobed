@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory" )]
+[CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory Syste/Inventory" )]
 public class InventoryObject : ScriptableObject
 {
+    public ItemDatabaseObject database;
     public List<InventorySlot> Container = new List<InventorySlot>(); //a list that contains all the items in the inventory
     public void AddItem(ItemObject _item, int _amount)
     {

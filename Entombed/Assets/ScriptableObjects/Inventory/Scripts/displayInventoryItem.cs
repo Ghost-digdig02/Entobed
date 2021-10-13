@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+/// <summary>
+/// This is a script used to display the players inventory in the UI
+/// </summary>
 public class displayInventoryItem : MonoBehaviour
 {
     public InventoryObject inventory;

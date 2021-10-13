@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// This is a plyer script the player will have to have to be able to pickup the items
+/// </summary>
 public class PlayerInventoryTest : MonoBehaviour
 {
     public InventoryObject inventory;
@@ -19,7 +21,7 @@ public class PlayerInventoryTest : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-       // inventory.Container.Clear();
+        inventory.Container.Clear();
     }
     
 }
