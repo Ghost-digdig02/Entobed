@@ -216,7 +216,7 @@ MonoBehaviour:
   Y_start: 40
   X_SpaceBetweenItems: 35
   Y_SpaceBetweenItems: 35
-  numberOfColoumns: 5
+  numberOfColoumns: 4
 --- !u!1 &274787779
 GameObject:
   m_ObjectHideFlags: 0

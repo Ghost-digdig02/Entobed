@@ -6,13 +6,17 @@ using TMPro;
 public class displayInventoryItem : MonoBehaviour
 {
     public InventoryObject inventory;
-
-    public int X_start;
-    public int Y_start;
-    public int X_SpaceBetweenItems; //the space int the x-axis that will be between the items in the inventory
-    public int Y_SpaceBetweenItems; //the space int the y-axis that will be between the items in the inventory
-    public int numberOfColoumns; //the number of colomns the inventory will have
-    Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>(); //a dictionary to hold the items
+    [SerializeField]
+    private int X_start;
+    [SerializeField]
+    private int Y_start;
+    [SerializeField]
+    private int X_SpaceBetweenItems; //the space int the x-axis that will be between the items in the inventory
+    [SerializeField]
+    private int Y_SpaceBetweenItems; //the space int the y-axis that will be between the items in the inventory
+    [SerializeField]
+    private int numberOfColoumns; //the number of colomns the inventory will have
+    protected Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>(); //a dictionary to hold the items
 
     void Start()
     {
@@ -25,13 +29,14 @@ public class displayInventoryItem : MonoBehaviour
         UpdateDisplay();
     }
 
-    public void CreateDisplay()
+    public void CreateDisplay() //creates the inventory display in the begining of the game
     {
         for(int i = 0; i < inventory.Container.Count; i++)
         {
             var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
             obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+            itemsDisplayed.Add(inventory.Container[i], obj);
         }
     }
 
@@ -39,8 +44,21 @@ public class displayInventoryItem : MonoBehaviour
     {
         return new Vector3(X_start +(X_SpaceBetweenItems * (i % numberOfColoumns)), Y_start +(-Y_SpaceBetweenItems *(i / numberOfColoumns)), 0f);
     }
-    public void UpdateDisplay()
+    public void UpdateDisplay() //uppdates the display
     {
-
+        for(int i = 0; i < inventory.Container.Count; i++)
+        {
+            if (itemsDisplayed.ContainsKey(inventory.Container[i]))//is used if an item already is inside the inventory
+            {
+                itemsDisplayed[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+            }
+            else //is used if an item already is'nt in the inventory
+            {
+                var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
+                obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
+                obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+                itemsDisplayed.Add(inventory.Container[i], obj);
+            }
+        }
     }
 }
