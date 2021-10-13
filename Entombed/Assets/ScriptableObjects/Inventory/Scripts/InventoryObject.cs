@@ -8,7 +8,9 @@ public class InventoryObject : ScriptableObject
     public List<InventorySlot> Container = new List<InventorySlot>(); //a list that contains all the items in the inventory
     public void AddItem(ItemObject _item, int _amount)
     {
-        bool hasItem = false; //here we asume that we don't have the item in our inventory
+        bool hasItem;
+        hasItem = false; //here we asume that we don't have the item in our inventory
+
         for(int i = 0; i < Container.Count; i++)//here we check if we have the item in the inventory
         {
             if(Container[i].item == _item)
@@ -16,11 +18,11 @@ public class InventoryObject : ScriptableObject
                 Container[i].AddAmount(_amount);
                 hasItem = true;
                 break;
-            }
-            if (!hasItem) //is used if the item does not already exist in the inventory
-            {
-                Container.Add(new InventorySlot(_item, _amount));
-            }
+            }          
+        }
+        if (!hasItem) //is used if the item does not already exist in the inventory
+        {
+            Container.Add(new InventorySlot(_item, _amount));
         }
     }
 }

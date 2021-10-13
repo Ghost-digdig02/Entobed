@@ -8,9 +8,7 @@ public class PlayerInventoryTest : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collided");
         var item = other.GetComponent<ItemOnetest>();
-
         if (item)
         {
             inventory.AddItem(item.item, 1);
@@ -21,7 +19,7 @@ public class PlayerInventoryTest : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        inventory.Container.Clear();
+       // inventory.Container.Clear();
     }
     
 }

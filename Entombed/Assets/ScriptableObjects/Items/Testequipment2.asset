@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab62b5f4fa93bf54fa3c5842dc7c60b1, type: 3}
-  m_Name: TestEquipment
+  m_Name: Testequipment2
   m_EditorClassIdentifier: 
   prefab: {fileID: 7920715386553509235, guid: 007cd7574a1564d49a4b59bd3f06e376, type: 3}
   type: 1

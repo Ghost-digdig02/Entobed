@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868e0b3f2a28c4c45bb8217665a46b7f, type: 3}
   m_Name: TestInventory
   m_EditorClassIdentifier: 
-  Container: []
+  Container:
+  - item: {fileID: 11400000, guid: 5725a77ee29b7a840a66c0cf81eb9e41, type: 2}
+    amount: 4
+  - item: {fileID: 11400000, guid: 952ff9504677de448b648f2b52be0ffe, type: 2}
+    amount: 2
+  - item: {fileID: 11400000, guid: 4126c310d33cb0c40aaa37844be9a6e3, type: 2}
+    amount: 3
+  - item: {fileID: 11400000, guid: 6668d22f04f43664aa77477d458b9efc, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 86ede927d95ba644985ef3ff425a68f4, type: 2}
+    amount: 1
