@@ -13,4 +13,22 @@ MonoBehaviour:
   m_Name: TestInventory
   m_EditorClassIdentifier: 
   database: {fileID: 11400000, guid: d1aa71ff2cb8c3f4cb92246d9af0beac, type: 2}
-  Container: []
+  Container:
+  - ID: 0
+    item: {fileID: 11400000, guid: 5725a77ee29b7a840a66c0cf81eb9e41, type: 2}
+    amount: 3
+  - ID: 1
+    item: {fileID: 11400000, guid: 86ede927d95ba644985ef3ff425a68f4, type: 2}
+    amount: 1
+  - ID: 2
+    item: {fileID: 11400000, guid: 952ff9504677de448b648f2b52be0ffe, type: 2}
+    amount: 4
+  - ID: 3
+    item: {fileID: 11400000, guid: 4126c310d33cb0c40aaa37844be9a6e3, type: 2}
+    amount: 3
+  - ID: 4
+    item: {fileID: 11400000, guid: 6668d22f04f43664aa77477d458b9efc, type: 2}
+    amount: 1
+  - ID: 5
+    item: {fileID: 11400000, guid: 5725a77ee29b7a840a66c0cf81eb9e41, type: 2}
+    amount: 2

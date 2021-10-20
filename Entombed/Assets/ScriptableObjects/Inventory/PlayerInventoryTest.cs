@@ -21,7 +21,7 @@ public class PlayerInventoryTest : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        inventory.Container.Clear();
+        //inventory.Container.Clear();
     }
     
 }
