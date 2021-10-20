@@ -136,8 +136,8 @@ GameObject:
   - component: {fileID: 29086441}
   - component: {fileID: 29086443}
   m_Layer: 5
-  m_Name: InventoryScreen
-  m_TagString: Untagged
+  m_Name: TestInventoryPanel
+  m_TagString: InventoryPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -749,6 +749,7 @@ GameObject:
   - component: {fileID: 1032532219}
   - component: {fileID: 1032532218}
   - component: {fileID: 1032532217}
+  - component: {fileID: 1032532221}
   m_Layer: 5
   m_Name: TestCanvas
   m_TagString: Untagged
@@ -837,6 +838,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1032532221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032532216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c281003af312364892dcbfba1d47220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1554545616
 GameObject:
   m_ObjectHideFlags: 0
