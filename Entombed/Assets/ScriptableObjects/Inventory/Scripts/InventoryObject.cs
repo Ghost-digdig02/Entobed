@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory Syste/Inventory" )]
 public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 {
+    public string savePath;
     public ItemDatabaseObject database;
     public List<InventorySlot> Container = new List<InventorySlot>(); //a list that contains all the items in the inventory
     public void AddItem(ItemObject _item, int _amount)
@@ -20,6 +23,29 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         }    
         Container.Add(new InventorySlot(database.GetId[_item], _item, _amount));
         
+    }
+
+    public void Save() //save method 
+    {
+        Debug.Log("save");
+        string saveData = JsonUtility.ToJson(this, true);
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(string.Concat(Application.persistentDataPath, savePath)); // using string.Concat takes up less space and creates less garbage collection that using "" + ""
+        bf.Serialize(file, saveData);
+        file.Close();
+
+    }
+
+    public void Load() //load method
+    {
+        if(File.Exists(string.Concat(Application.persistentDataPath, savePath)))
+        {
+            Debug.Log("load");
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open);
+            JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), this);
+            file.Close(); //closing the file after we're done makes sure that we don't have any memoryleaks
+        }
     }
 
     public void OnAfterDeserialize() // is used as soon as something changes on a scriptable object that cuses unity to need to serialize that object

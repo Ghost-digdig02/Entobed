@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ItemOnetest : MonoBehaviour
+/// <summary>
+/// Add this script to all items
+/// </summary>
+public class Item : MonoBehaviour
 {
     public ItemObject item;
 }

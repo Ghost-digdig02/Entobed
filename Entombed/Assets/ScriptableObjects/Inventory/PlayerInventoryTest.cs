@@ -10,18 +10,29 @@ public class PlayerInventoryTest : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        var item = other.GetComponent<ItemOnetest>();
+        var item = other.GetComponent<Item>();
         if (item)
         {
             inventory.AddItem(item.item, 1);
             Destroy(other.gameObject);
-        }
-       
-        
+        }        
     }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) //change these later
+        {
+            inventory.Save();
+        }
+        if (Input.GetKeyDown(KeyCode.L)) //change these later
+        {
+            inventory.Load();
+        }
+    }
+
     private void OnApplicationQuit()
     {
-        //inventory.Container.Clear();
+        inventory.Container.Clear();
     }
     
 }
