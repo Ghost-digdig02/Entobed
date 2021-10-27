@@ -3,13 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEditor;
 
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory Syste/Inventory" )]
 public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 {
     public string savePath;
-    public ItemDatabaseObject database;
+    private ItemDatabaseObject database;
     public List<InventorySlot> Container = new List<InventorySlot>(); //a list that contains all the items in the inventory
+
+    private void OnEnable()
+    {
+#if UNITY_EDITOR
+        database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resourses/TestDatabase.asset", typeof(ItemDatabaseObject)); //the assetpath will be different for the real database we'll use. it should be "Assets/Resourses/TheGamesInventoryDataBase.asset"
+#else
+        database = Resources.Load<ItemDatabaseObject>("Database");
+#endif
+    }
+
     public void AddItem(ItemObject _item, int _amount)
     {
         
