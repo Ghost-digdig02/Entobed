@@ -3,7 +3,12 @@ guid: 1bae4d44e88713d4783efa2748e8b2b5
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_m
+    second: {fileID: 2100000, guid: edcb105612b9c6646b3b4930442ede46, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -85,7 +90,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.79999995
+    globalScale: 80
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
