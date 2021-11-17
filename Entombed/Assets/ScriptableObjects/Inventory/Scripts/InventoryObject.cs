@@ -10,29 +10,21 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 {
     public string savePath;
     private ItemDatabaseObject database;
-    public List<InventorySlot> Container = new List<InventorySlot>(); //a list that contains all the items in the inventory
+    public Inventory Container;
 
-    private void OnEnable()
-    {
-#if UNITY_EDITOR
-        database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resourses/TestDatabase.asset", typeof(ItemDatabaseObject)); //the assetpath will be different for the real database we'll use. it should be "Assets/Resourses/TheGamesInventoryDataBase.asset"
-#else
-        database = Resources.Load<ItemDatabaseObject>("Database");
-#endif
-    }
 
-    public void AddItem(ItemObject _item, int _amount)
+    public void AddItem(Item _item, int _amount)
     {
         
-        for(int i = 0; i < Container.Count; i++)//here we check if we have the item in the inventory
+        for(int i = 0; i < Container.Items.Count; i++)//here we check if we have the item in the inventory
         {
-            if(Container[i].item == _item)
+            if(Container.Items[i].item == _item)
             {
-               Container[i].AddAmount(_amount);
+               Container.Items[i].AddAmount(_amount);
                 return;              
             }          
         }    
-        Container.Add(new InventorySlot(database.GetId[_item], _item, _amount));
+        Container.Items.Add(new InventorySlot(_item.Id, _item, _amount));
         
     }
 
@@ -61,26 +53,32 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnAfterDeserialize() // is used as soon as something changes on a scriptable object that cuses unity to need to serialize that object
     {
-        for (int i = 0; i < Container.Count; i++) //looks through all the items in our container and makes sure that all item matches with their item id
+        for (int i = 0; i < Container.Items.Count; i++) //looks through all the items in our container and makes sure that all item matches with their item id
         { 
-            Container[i].item = database.GetItem[Container[i].ID]; 
+  ///          Container.Items[i].item = database.GetItem[Container.Items[i].ID]; Fix this when you have the enery
         } 
     }
 
-    public void OnBeforeSerialize()
+    public void OnBeforeSerialize() //this needs to be here since we are using the OnAfterdeserialize from the ISerializationCallbackReceiver
     {
         
     }
 }
 
 [System.Serializable]
+public class Inventory
+{
+    public List<InventorySlot> Items = new List<InventorySlot>(); 
+}
+
+[System.Serializable]
 public class InventorySlot
 {
     public int ID;
-    public ItemObject item;
+    public Item item;
     public int amount; //how many of the items that is in the inventory
 
-    public InventorySlot( int _id, ItemObject _item, int _amount) //a constructor for the class
+    public InventorySlot( int _id, Item _item, int _amount) //a constructor for the class
     {
         ID = _id;
         item = _item;
