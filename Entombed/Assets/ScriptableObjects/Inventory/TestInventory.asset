@@ -13,13 +13,96 @@ MonoBehaviour:
   m_Name: TestInventory
   m_EditorClassIdentifier: 
   savePath: /Inventory.Save
+  database: {fileID: 11400000, guid: d1aa71ff2cb8c3f4cb92246d9af0beac, type: 2}
   Container:
-  - ID: 0
-    item: {fileID: 11400000, guid: 5725a77ee29b7a840a66c0cf81eb9e41, type: 2}
-    amount: 4
-  - ID: 2
-    item: {fileID: 11400000, guid: 952ff9504677de448b648f2b52be0ffe, type: 2}
-    amount: 2
-  - ID: 3
-    item: {fileID: 11400000, guid: 4126c310d33cb0c40aaa37844be9a6e3, type: 2}
-    amount: 1
+    Items:
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
+    - ID: -1
+      item:
+        Name: 
+        Id: 0
+      amount: 0
