@@ -13,7 +13,7 @@ public class PlayerInventoryTest : MonoBehaviour
         var item = other.GetComponent<GroundItem>();
         if (item)
         {
-          //  inventory.AddItem(new Item(item.item), 1);
+            inventory.AddItem(new Item(item.item), 1);
             Destroy(other.gameObject);
         }        
     }

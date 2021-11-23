@@ -14,7 +14,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
 
     public void AddItem(Item _item, int _amount)
-    {      
+    {
 
         for (int i = 0; i < Container.Items.Length; i++)//here we check if we have the item in the inventory
         {
@@ -24,8 +24,8 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
                 return;
             }
         }
-
         SetEmptySlot(_item, _amount);
+
 
     }
     public InventorySlot SetEmptySlot(Item _item, int _amount) //function to find the first empty slot in the inventory
@@ -40,6 +40,13 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         }
         
         return null; //this can be changed depending on what happens when your inventory is full. I will leave it like this since the player in this game will be able to hold every item they will need in their inventory
+    }
+
+    public void MoveItem(InventorySlot item1, InventorySlot item2) //void to move the items to another slot in the inventory (this is used in display inventory)
+    {
+        InventorySlot temp = new InventorySlot(item2.ID, item2.item, item2.amount);
+        item2.UpdateSlot(item1.ID, item1.item, item1.amount);
+        item1.UpdateSlot(temp.ID, temp.item, temp.amount);
     }
 
     public void Save() //save method 

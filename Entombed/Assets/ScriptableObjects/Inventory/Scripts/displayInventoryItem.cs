@@ -10,6 +10,8 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class DisplayInventoryItem : MonoBehaviour
 {
+    public MouseItem mouseItem = new MouseItem();
+
     public GameObject inventoryPrefab; //we only use one single prefab for all items, we only switch the sprite
     public InventoryObject inventory;
     [SerializeField]
@@ -82,11 +84,16 @@ public class DisplayInventoryItem : MonoBehaviour
 
     public void OnEnter(GameObject obj)
     {
-
+        mouseItem.hoverobj = obj;
+        if (itemsDisplayed.ContainsKey(obj))
+        {
+            mouseItem.hoverItem = itemsDisplayed[obj];
+        }
     }
     public void OnExit(GameObject obj)
     {
-
+        mouseItem.hoverobj = null;
+        mouseItem.hoverItem = null;
     }
     public void OnDragStart(GameObject obj)
     {
@@ -100,14 +107,28 @@ public class DisplayInventoryItem : MonoBehaviour
             img.sprite = inventory.database.GetItem[itemsDisplayed[obj].ID].UiDispaly;
             img.raycastTarget = false;
         }
+        mouseItem.obj = mouseObject;
+        mouseItem.item = itemsDisplayed[obj];
     }
     public void OnDragEnd(GameObject obj)
     {
+        if (mouseItem.hoverobj)
+        {
+            inventory.MoveItem(itemsDisplayed[obj], itemsDisplayed[mouseItem.hoverobj]);
+        }
+        else
+        {
 
+        }
+        Destroy(mouseItem.obj);
+        mouseItem.item = null;
     }
     public void OnDrag(GameObject obj)
     {
-
+        if(mouseItem.obj != null)
+        {
+            mouseItem.obj.GetComponent<RectTransform>().position = Input.mousePosition;
+        }
     }
 
 
@@ -116,4 +137,13 @@ public class DisplayInventoryItem : MonoBehaviour
         return new Vector3(X_start +(X_SpaceBetweenItems * (i % numberOfColoumns)), Y_start +(-Y_SpaceBetweenItems *(i / numberOfColoumns)), 0f);
     }
    
+    public class MouseItem
+    {
+        public GameObject obj;
+        public InventorySlot item;
+        public InventorySlot hoverItem;
+        public GameObject hoverobj;
+    }
+        
+
 }
