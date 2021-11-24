@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 29086441}
   - component: {fileID: 29086443}
   m_Layer: 5
-  m_Name: TestInventoryPanel
+  m_Name: TestInventoryScreen
   m_TagString: InventoryPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,10 +156,10 @@ RectTransform:
   m_Father: {fileID: 1032532220}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 306.4934, y: -5.3150024}
-  m_SizeDelta: {x: -612.9868, y: -102.755}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -98.5, y: -5.5}
+  m_SizeDelta: {x: 197, y: 353}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &29086441
 MonoBehaviour:
@@ -211,12 +211,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbc59c2ad1ce164e97e2f83fdce2b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryPrefab: {fileID: 7551214355795429599, guid: 21b0ca29f8f37c744858948834400bd5, type: 3}
   inventory: {fileID: 11400000, guid: 5428658f6aec97247b6634dae2c047bc, type: 2}
-  X_start: -50
-  Y_start: 40
-  X_SpaceBetweenItems: 35
-  Y_SpaceBetweenItems: 35
-  numberOfColoumns: 4
+  X_start: -55
+  Y_start: 138
+  X_SpaceBetweenItems: 55
+  Y_SpaceBetweenItems: 55
+  numberOfColoumns: 3
 --- !u!1 &274787779
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bbe608db8fae14bb784bd5149e202a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 5725a77ee29b7a840a66c0cf81eb9e41, type: 2}
+  item: {fileID: 11400000, guid: 952ff9504677de448b648f2b52be0ffe, type: 2}
 --- !u!4 &274787782
 Transform:
   m_ObjectHideFlags: 0
@@ -721,7 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bbe608db8fae14bb784bd5149e202a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 5725a77ee29b7a840a66c0cf81eb9e41, type: 2}
+  item: {fileID: 11400000, guid: 6668d22f04f43664aa77477d458b9efc, type: 2}
 --- !u!4 &771475893
 Transform:
   m_ObjectHideFlags: 0
@@ -807,7 +808,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 432005042}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

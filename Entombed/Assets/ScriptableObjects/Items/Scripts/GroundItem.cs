@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// Add this script to all items
 /// </summary>
-public class Item : MonoBehaviour
+public class GroundItem : MonoBehaviour
 {
     public ItemObject item;
 }

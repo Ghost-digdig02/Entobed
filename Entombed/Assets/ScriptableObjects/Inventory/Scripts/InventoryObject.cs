@@ -9,31 +9,44 @@ using UnityEditor;
 public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 {
     public string savePath;
-    private ItemDatabaseObject database;
-    public List<InventorySlot> Container = new List<InventorySlot>(); //a list that contains all the items in the inventory
+    public ItemDatabaseObject database;
+    public Inventory Container;
 
-    private void OnEnable()
+
+    public void AddItem(Item _item, int _amount)
     {
-#if UNITY_EDITOR
-        database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resourses/TestDatabase.asset", typeof(ItemDatabaseObject)); //the assetpath will be different for the real database we'll use. it should be "Assets/Resourses/TheGamesInventoryDataBase.asset"
-#else
-        database = Resources.Load<ItemDatabaseObject>("Database");
-#endif
+
+        for (int i = 0; i < Container.Items.Length; i++)//here we check if we have the item in the inventory
+        {
+            if (Container.Items[i].ID == _item.Id)
+            {
+                Container.Items[i].AddAmount(_amount);
+                return;
+            }
+        }
+        SetEmptySlot(_item, _amount);
+
+
+    }
+    public InventorySlot SetEmptySlot(Item _item, int _amount) //function to find the first empty slot in the inventory
+    {
+        for (int i = 0; i < Container.Items.Length; i++)
+        {
+            if (Container.Items[i].ID <= -1)
+            {
+                Container.Items[i].UpdateSlot(_item.Id, _item, _amount);
+                return Container.Items[i];
+            }
+        }
+        
+        return null; //this can be changed depending on what happens when your inventory is full. I will leave it like this since the player in this game will be able to hold every item they will need in their inventory
     }
 
-    public void AddItem(ItemObject _item, int _amount)
+    public void MoveItem(InventorySlot item1, InventorySlot item2) //void to move the items to another slot in the inventory (this is used in display inventory)
     {
-        
-        for(int i = 0; i < Container.Count; i++)//here we check if we have the item in the inventory
-        {
-            if(Container[i].item == _item)
-            {
-               Container[i].AddAmount(_amount);
-                return;              
-            }          
-        }    
-        Container.Add(new InventorySlot(database.GetId[_item], _item, _amount));
-        
+        InventorySlot temp = new InventorySlot(item2.ID, item2.item, item2.amount);
+        item2.UpdateSlot(item1.ID, item1.item, item1.amount);
+        item1.UpdateSlot(temp.ID, temp.item, temp.amount);
     }
 
     public void Save() //save method 
@@ -61,26 +74,45 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnAfterDeserialize() // is used as soon as something changes on a scriptable object that cuses unity to need to serialize that object
     {
-        for (int i = 0; i < Container.Count; i++) //looks through all the items in our container and makes sure that all item matches with their item id
-        { 
-            Container[i].item = database.GetItem[Container[i].ID]; 
-        } 
+  //      for (int i = 0; i < Container.Items.Count; i++) //looks through all the items in our container and makes sure that all item matches with their item id
+  //      { 
+  /////          Container.Items[i].item = database.GetItem[Container.Items[i].ID]; Fix this when you have the enery
+  //      } 
     }
 
-    public void OnBeforeSerialize()
+    public void OnBeforeSerialize() //this needs to be here since we are using the OnAfterdeserialize from the ISerializationCallbackReceiver
     {
         
     }
 }
 
 [System.Serializable]
+public class Inventory
+{    
+    public InventorySlot[] Items = new InventorySlot[18]; 
+}
+
+[System.Serializable]
 public class InventorySlot
 {
     public int ID;
-    public ItemObject item;
+    public Item item;
     public int amount; //how many of the items that is in the inventory
+    public InventorySlot() //default constructor for the class
+    {
+        ID = -1;
+        item = null;
+        amount = 0;
 
-    public InventorySlot( int _id, ItemObject _item, int _amount) //a constructor for the class
+    }
+    public InventorySlot( int _id, Item _item, int _amount) //a constructor for the class
+    {
+        ID = _id;
+        item = _item;
+        amount = _amount;
+
+    }
+    public void UpdateSlot(int _id, Item _item, int _amount) //a constructor for the class
     {
         ID = _id;
         item = _item;

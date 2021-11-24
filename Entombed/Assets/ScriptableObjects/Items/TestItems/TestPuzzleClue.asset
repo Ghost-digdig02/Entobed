@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 908d9d49517f0604e93c99bb2ebdb022, type: 3}
   m_Name: TestPuzzleClue
   m_EditorClassIdentifier: 
-  prefab: {fileID: 549663996407813110, guid: 2e9c371ac9bc3b74b9be4cec27b8a080, type: 3}
+  Id: 2
+  UiDispaly: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   type: 2
   description: 

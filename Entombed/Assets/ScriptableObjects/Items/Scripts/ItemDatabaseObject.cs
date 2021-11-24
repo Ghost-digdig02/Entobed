@@ -11,22 +11,19 @@ public class ItemDatabaseObject : ScriptableObject, ISerializationCallbackReceiv
     [TextArea(15, 20)]
     public string description; //holds a description so I'll remeber better were to put the right stuff
     public ItemObject[] Items;
-    public Dictionary<ItemObject, int> GetId = new Dictionary<ItemObject, int>(); //here I use two dictionaries (for the purpose of the item database), I know that this requires more memory(we're using double the memory) than using a doubble for-loop (which I could have used instead), but preformancewise it wont matter for this smaller game (using doubble for-loops takes a lot of time)
     public Dictionary<int, ItemObject> GetItem = new Dictionary<int, ItemObject>();
 
     public void OnAfterDeserialize() //is used since Unity doesn't serialize dictionaries
-    {
-        GetId = new Dictionary<ItemObject, int>();
-        GetItem = new Dictionary<int, ItemObject>();
+    {       
         for (int i = 0; i < Items.Length; i++)
         {
-            GetId.Add(Items[i], i);
+            Items[i].Id = i;
             GetItem.Add(i, Items[i]);
         }
     }
 
     public void OnBeforeSerialize()
     {
-        //this is not used, but it still needs to be here since we use ISerializationCallbackReceiver :)
+        GetItem = new Dictionary<int, ItemObject>();
     }
 }
