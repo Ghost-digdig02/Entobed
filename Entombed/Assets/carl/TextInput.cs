@@ -30,6 +30,11 @@ public class TextInput : MonoBehaviour
                 textBox.text = "";
             }
         }
+        else
+        {
+            if (!textBox.isFocused && Input.GetKeyDown(KeyCode.Return))
+                textBox.ActivateInputField();
+        }
         if (!textBox.isFocused)
         {
             if (Input.GetKeyDown(KeyCode.Space))
