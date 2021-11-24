@@ -57,7 +57,6 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         FileStream file = File.Create(string.Concat(Application.persistentDataPath, savePath)); // using string.Concat takes up less space and creates less garbage collection that using "" + ""
         bf.Serialize(file, saveData);
         file.Close();
-
     }
 
     public void Load() //load method
