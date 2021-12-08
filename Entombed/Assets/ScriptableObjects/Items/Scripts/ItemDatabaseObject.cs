@@ -13,7 +13,7 @@ public class ItemDatabaseObject : ScriptableObject, ISerializationCallbackReceiv
     public ItemObject[] Items;
     public Dictionary<int, ItemObject> GetItem = new Dictionary<int, ItemObject>();
 
-    public void OnAfterDeserialize() //is used since Unity doesn't serialize dictionaries
+    public void OnAfterDeserialize() //is used since Unity doesn't serialize dictionaries, but I don't use a dictionary anymore? Come back an fix this bulshit...
     {       
         for (int i = 0; i < Items.Length; i++)
         {

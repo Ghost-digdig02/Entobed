@@ -73,10 +73,10 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnAfterDeserialize() // is used as soon as something changes on a scriptable object that cuses unity to need to serialize that object
     {
-  //      for (int i = 0; i < Container.Items.Count; i++) //looks through all the items in our container and makes sure that all item matches with their item id
-  //      { 
-  /////          Container.Items[i].item = database.GetItem[Container.Items[i].ID]; Fix this when you have the enery
-  //      } 
+        for (int i = 0; i < Container.Items.Length; i++) //looks through all the items in our container and makes sure that all item matches with their item id
+        {
+            // Container.Items[i].item = database.GetItem[Container.Items[i].ID]; //Fix this when you have the enery
+        }
     }
 
     public void OnBeforeSerialize() //this needs to be here since we are using the OnAfterdeserialize from the ISerializationCallbackReceiver
