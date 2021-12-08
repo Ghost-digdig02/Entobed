@@ -11,7 +11,7 @@ public class HideAndOpenInventoryScript : MonoBehaviour
 
     public void Start()
     {
-        inventoryCanvas = GameObject.Find("TestInventoryScreen"); //change this to InventoryPanel in the reall version later
+        inventoryCanvas = GameObject.Find("InventoryScreen"); //change this to InventoryPanel in the reall version later
         inventoryIsOpen = true;
     }
     void Update()

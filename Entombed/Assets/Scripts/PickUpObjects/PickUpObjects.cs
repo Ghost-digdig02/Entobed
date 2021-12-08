@@ -25,9 +25,7 @@ public class PickUpObjects : MonoBehaviour
     {
         if (holdingObject == true && Input.GetMouseButton(1)) //adds the item to the player's inventory if the player klicks the item while holding it
         {
-            Debug.Log("pick up item");
             guideCol.enabled = true; //this line allows the item the player is holding to enter the player's inventory (the inventory pick up system is based around colliders)
-            Debug.Log(guideCol.enabled);
             holdingObject = false;
         }
 
