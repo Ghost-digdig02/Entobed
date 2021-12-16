@@ -1847,6 +1847,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbc59c2ad1ce164e97e2f83fdce2b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryPrefab: {fileID: 7551214355795429599, guid: 21b0ca29f8f37c744858948834400bd5, type: 3}
+  inventory: {fileID: 11400000, guid: d266bbd8e1146b644a74628e9231c996, type: 2}
+  X_start: -55
+  Y_start: 138
+  X_SpaceBetweenItems: 55
+  Y_SpaceBetweenItems: 55
+  numberOfColoumns: 3
 --- !u!114 &518861434
 MonoBehaviour:
   m_ObjectHideFlags: 0
