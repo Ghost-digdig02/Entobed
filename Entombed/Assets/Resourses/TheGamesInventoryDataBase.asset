@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ebf34f643f4494293bd1b700534f35, type: 3}
   m_Name: TheGamesInventoryDataBase
   m_EditorClassIdentifier: 
-  description: This database should contain all the items that will shouw up in the
+  description: This database should contain all the items that will show up in the
     game.
   Items:
   - {fileID: 11400000, guid: 5ae7484fdae3e9e44a09ae854b741714, type: 2}
@@ -20,4 +20,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fe1d30669ebac9e489c902952a363c3b, type: 2}
   - {fileID: 11400000, guid: 71a67dd2c0cca3347a15b829b6512415, type: 2}
   - {fileID: 11400000, guid: f7270d8f5a2e080449d88ed8a8902abe, type: 2}
+  - {fileID: 11400000, guid: 65ed87f27746cbf4689cc6cc60426d72, type: 2}
+  - {fileID: 11400000, guid: 65ed87f27746cbf4689cc6cc60426d72, type: 2}
+  - {fileID: 11400000, guid: 65ed87f27746cbf4689cc6cc60426d72, type: 2}
+  - {fileID: 11400000, guid: 65ed87f27746cbf4689cc6cc60426d72, type: 2}
+  - {fileID: 11400000, guid: 65ed87f27746cbf4689cc6cc60426d72, type: 2}
+  - {fileID: 11400000, guid: 65ed87f27746cbf4689cc6cc60426d72, type: 2}
+  - {fileID: 11400000, guid: 65ed87f27746cbf4689cc6cc60426d72, type: 2}
+  - {fileID: 11400000, guid: 65ed87f27746cbf4689cc6cc60426d72, type: 2}
+  - {fileID: 11400000, guid: 65ed87f27746cbf4689cc6cc60426d72, type: 2}
+  - {fileID: 11400000, guid: 65ed87f27746cbf4689cc6cc60426d72, type: 2}
+  - {fileID: 11400000, guid: 65ed87f27746cbf4689cc6cc60426d72, type: 2}
+  - {fileID: 11400000, guid: 65ed87f27746cbf4689cc6cc60426d72, type: 2}
   - {fileID: 11400000, guid: 65ed87f27746cbf4689cc6cc60426d72, type: 2}
