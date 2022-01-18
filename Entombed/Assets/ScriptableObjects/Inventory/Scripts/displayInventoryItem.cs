@@ -70,6 +70,7 @@ public class DisplayInventoryItem : MonoBehaviour
             AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
 
             itemsDisplayed.Add(obj, inventory.Container.Items[i]);
+
         }
     }
 
@@ -145,5 +146,4 @@ public class DisplayInventoryItem : MonoBehaviour
         public GameObject hoverobj;
     }
         
-
 }
