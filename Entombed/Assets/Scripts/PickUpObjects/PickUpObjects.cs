@@ -31,7 +31,7 @@ public class PickUpObjects : MonoBehaviour
 
         if(mouseDown == true && holdingObject == false) //is used if the player clicks on an item the want to pick up
         {
-            holdItem();
+            HoldItem();
         }
 
         if(mouseDown == false && holdingObject == true) //is used when the player doesn't want to hold an object anymore
@@ -50,7 +50,7 @@ public class PickUpObjects : MonoBehaviour
 
     }
 
-    void holdItem() //this void allowes the player to pick up an item (it changes the position of the item the player clicked to where the guide is (the player's "hand")
+    void HoldItem() //this void allowes the player to pick up an item (it changes the position of the item the player clicked to where the guide is (the player's "hand")
     {
         item.GetComponent<Rigidbody>().useGravity = false;
         item.GetComponent<Rigidbody>().isKinematic = true;
