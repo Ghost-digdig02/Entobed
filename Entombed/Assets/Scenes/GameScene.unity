@@ -459,7 +459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &96770144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2731,6 +2731,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbc59c2ad1ce164e97e2f83fdce2b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryPrefab: {fileID: 7551214355795429599, guid: 21b0ca29f8f37c744858948834400bd5, type: 3}
+  inventory: {fileID: 11400000, guid: d266bbd8e1146b644a74628e9231c996, type: 2}
+  X_start: -60
+  Y_start: 138
+  X_SpaceBetweenItems: 55
+  Y_SpaceBetweenItems: 55
+  numberOfColoumns: 3
 --- !u!114 &518861434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4355,7 +4362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 799260389}
   tempParent: {fileID: 1498234098}
-  guide: {fileID: 1498234099}
+  guide: {fileID: 885363183}
   guideCol: {fileID: 1498234101}
 --- !u!135 &799260392
 SphereCollider:
@@ -4712,6 +4719,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2eb04722f29c0a54ebf82a0d4299766c, type: 3}
+--- !u!4 &885363183 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6934398075436116217, guid: 7d0cc14b391a0c2408ed66120a7f4bc6, type: 3}
+  m_PrefabInstance: {fileID: 536741679}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &889118798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6777,7 +6789,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498234098}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.23, z: -2}
+  m_LocalPosition: {x: 0, y: 0, z: 4.2}
   m_LocalScale: {x: 0.33333334, y: 0.25, z: 0.33333334}
   m_Children: []
   m_Father: {fileID: 1138498927}

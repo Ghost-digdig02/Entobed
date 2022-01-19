@@ -63,6 +63,7 @@ public class PickUpObjects : MonoBehaviour
         holdingObject = true;
 
         Debug.Log("holding item");
+        Debug.Log(item.transform.position);
     }
 
     void LetGoOfItem() //this void allows the player to put the item back down
