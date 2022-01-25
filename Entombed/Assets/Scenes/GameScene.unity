@@ -4362,7 +4362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 799260389}
   tempParent: {fileID: 1498234098}
-  guide: {fileID: 885363183}
+  guide: {fileID: 1498234099}
   guideCol: {fileID: 1498234101}
 --- !u!135 &799260392
 SphereCollider:
@@ -4719,11 +4719,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2eb04722f29c0a54ebf82a0d4299766c, type: 3}
---- !u!4 &885363183 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6934398075436116217, guid: 7d0cc14b391a0c2408ed66120a7f4bc6, type: 3}
-  m_PrefabInstance: {fileID: 536741679}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &889118798
 PrefabInstance:
   m_ObjectHideFlags: 0

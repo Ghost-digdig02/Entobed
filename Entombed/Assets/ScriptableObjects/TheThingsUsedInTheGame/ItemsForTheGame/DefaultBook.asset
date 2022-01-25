@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5edc3f639c1dafb4684eb1b8fca86512, type: 3}
   m_Name: DefaultBook
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  Id: 0
+  UiDispaly: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   type: 4
   description: 
