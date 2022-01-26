@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/// <summary>
-/// This is a script that allowes a gameObject to be rotated if the player clicks on them.
-/// </summary>
-public class RoteraLåsDelar : MonoBehaviour
+
+public class RoteraLåsDelar4 : MonoBehaviour
 {
     [SerializeField]
     private GameObject lockPart;
@@ -16,15 +14,15 @@ public class RoteraLåsDelar : MonoBehaviour
     private void Update()
     {
         if (rotationsDone == 5) { resetRotationsDone = true; }
-        
-        if(resetRotationsDone == true)
+
+        if (resetRotationsDone == true)
         {
             rotationsDone = 0;
             resetRotationsDone = false;
         }
 
         lockPartRotaion = lockPart.transform.rotation.z;
-        if( rotationsDone < 5) { lockPartRotaion = 72;}
+        if (rotationsDone < 5) { lockPartRotaion = 72; }
     }
 
     private void OnMouseUp()
