@@ -35,9 +35,9 @@ public class TextInput : MonoBehaviour
             if (!textBox.isFocused && Input.GetKeyDown(KeyCode.Return))
                 textBox.ActivateInputField();
         }
-        if (!textBox.isFocused)
+        if (textBox.text == "123")
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+           // if (Input.GetKeyDown(KeyCode.Space))
             {
                 SendMessageToPuzzle("wow de funka");
                 Debug.Log("Space");

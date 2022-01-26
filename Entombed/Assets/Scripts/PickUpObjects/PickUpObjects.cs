@@ -27,11 +27,12 @@ public class PickUpObjects : MonoBehaviour
         {
             guideCol.enabled = true; //this line allows the item the player is holding to enter the player's inventory (the inventory pick up system is based around colliders)
             holdingObject = false;
+            Debug.Log("adding item to inventory");
         }
 
         if(mouseDown == true && holdingObject == false) //is used if the player clicks on an item the want to pick up
         {
-            holdItem();
+            HoldItem();
         }
 
         if(mouseDown == false && holdingObject == true) //is used when the player doesn't want to hold an object anymore
@@ -50,15 +51,16 @@ public class PickUpObjects : MonoBehaviour
 
     }
 
-    void holdItem() //this void allowes the player to pick up an item (it changes the position of the item the player clicked to where the guide is (the player's "hand")
+    void HoldItem() //this void allowes the player to pick up an item (it changes the position of the item the player clicked to where the guide is (the player's "hand")
     {
         item.GetComponent<Rigidbody>().useGravity = false;
         item.GetComponent<Rigidbody>().isKinematic = true;
 
-        item.transform.position = guide.transform.position;
-        item.transform.rotation = guide.transform.rotation;
-
         item.transform.parent = tempParent.transform;
+
+        item.transform.position = guide.transform.position;
+        item.transform.localPosition = new Vector3(0, 0, -9); 
+        item.transform.rotation = guide.transform.rotation;
 
         holdingObject = true;
 
@@ -72,6 +74,7 @@ public class PickUpObjects : MonoBehaviour
 
         item.GetComponent<Rigidbody>().useGravity = true;
         item.GetComponent<Rigidbody>().isKinematic = false;
+        item.GetComponent<SphereCollider>().enabled = true;
 
         item.transform.parent = null;
         item.transform.position = guide.transform.position;
