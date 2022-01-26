@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// This script checks if the player has clicked/picked up the lockpart. This script is conected/used together with the ChifferLåsMainScript.
+/// </summary>
 public class EnableRotationForLooseLockPiece : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static bool itemHasBeenPickedUp = false;   
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseDown()
     {
-        
+        itemHasBeenPickedUp = true;
+        Debug.Log("lockpart has been clicked");
     }
 }
