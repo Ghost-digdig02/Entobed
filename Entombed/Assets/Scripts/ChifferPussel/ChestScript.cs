@@ -14,6 +14,7 @@ public class ChestScript : MonoBehaviour
     {
         if(EnableRotationForLooseLockPiece.itemHasBeenPickedUp == true)
         {
+            Debug.Log("The chest has been clicked");
             ChestHasBeenClicked = true;
             this.GetComponent<BoxCollider>().enabled = false;
         }        
