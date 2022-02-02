@@ -9,6 +9,7 @@ using UnityEngine;
 public class ChestScript : MonoBehaviour
 {
     public static bool ChestHasBeenClicked = false;
+    public GameObject lockPart;
 
     private void OnMouseDown()
     {
@@ -17,6 +18,8 @@ public class ChestScript : MonoBehaviour
             Debug.Log("The chest has been clicked");
             ChestHasBeenClicked = true;
             this.GetComponent<BoxCollider>().enabled = false;
+
+            Destroy(lockPart); //deletes the lockpart the player is holding in their hand
         }        
     }
 }
