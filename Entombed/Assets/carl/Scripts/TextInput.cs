@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 
 public class TextInput : MonoBehaviour
-{
+{ 
     Rigidbody rb;
+
+    public TextInput ti;
 
     public int maxMessages = 1;
 
-    //public GameObject door;
+    public GameObject door;
     public GameObject textObject;
     public InputField textBox;
 
@@ -44,17 +46,22 @@ public class TextInput : MonoBehaviour
             if (!textBox.isFocused && Input.GetKeyDown(KeyCode.Return))
                 textBox.ActivateInputField();
         }
+        //if (textBox.text == "123")
+      //  {
+           ////// if (Input.GetKeyDown(KeyCode.Space))
+            //{
+             //   isdooropen = true;
+           //     SendMessageToPuzzle("wow de funka");
+         //       Debug.Log(":)");
+                
+       //     }
+            
+                
+     //   }
         if (textBox.text == "123")
         {
-           ////// if (Input.GetKeyDown(KeyCode.Space))
-            {
-                isdooropen = true;
-                SendMessageToPuzzle("wow de funka");
-                Debug.Log(":)");
-            }
-                
+            FindObjectOfType<PusselEnd>().DuVann();
         }
-
         
     }
 
