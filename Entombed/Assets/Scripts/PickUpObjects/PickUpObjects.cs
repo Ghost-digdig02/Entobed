@@ -59,7 +59,7 @@ public class PickUpObjects : MonoBehaviour
         item.transform.parent = tempParent.transform;
 
         item.transform.position = guide.transform.position;
-        item.transform.localPosition = new Vector3(0, 0, -9); 
+        item.transform.localPosition = new Vector3(8, 1, -1); //this is the offset from the guide position
         item.transform.rotation = guide.transform.rotation;
 
         holdingObject = true;
