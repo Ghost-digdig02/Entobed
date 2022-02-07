@@ -16,6 +16,7 @@ public class ChifferLåsMainScript : MonoBehaviour
         if(EnableRotationForLooseLockPiece.itemHasBeenPickedUp == true && ChestScript.ChestHasBeenClicked == true)
         {
             lockPart.SetActive(true);
+            Destroy(this);
         }
     }
 }
