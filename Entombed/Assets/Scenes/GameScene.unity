@@ -14438,6 +14438,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7184007731360767715, guid: 3ceb3bf8259f8bb4b9c0f28faff8bbf5, type: 3}
   m_PrefabInstance: {fileID: 961412982}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &978784043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5777374554337051803, guid: d393d14632a1780408d9d897dcad364c, type: 3}
+  m_PrefabInstance: {fileID: 1170919650}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &987314233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16743,9 +16748,41 @@ PrefabInstance:
       value: "Blenda_box_l\xE5s"
       objectReference: {fileID: 0}
     - target: {fileID: 5777374554363408438, guid: d393d14632a1780408d9d897dcad364c, type: 3}
+      propertyPath: Chest
+      value: 
+      objectReference: {fileID: 978784043}
+    - target: {fileID: 5777374554363408438, guid: d393d14632a1780408d9d897dcad364c, type: 3}
       propertyPath: lockPart
       value: 
       objectReference: {fileID: 1872078773}
+    - target: {fileID: 5777374554731501672, guid: d393d14632a1780408d9d897dcad364c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 060247b2fa81217428417e6b9ac90760, type: 2}
+    - target: {fileID: 5777374554731501677, guid: d393d14632a1780408d9d897dcad364c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777374554731501678, guid: d393d14632a1780408d9d897dcad364c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777374554731501678, guid: d393d14632a1780408d9d897dcad364c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.016046118
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777374554731501678, guid: d393d14632a1780408d9d897dcad364c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777374554731501678, guid: d393d14632a1780408d9d897dcad364c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777374555939456950, guid: d393d14632a1780408d9d897dcad364c, type: 3}
+      propertyPath: Chest
+      value: 
+      objectReference: {fileID: 978784043}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d393d14632a1780408d9d897dcad364c, type: 3}
 --- !u!1001 &1182212307

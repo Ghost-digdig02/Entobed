@@ -10,6 +10,7 @@ public class UnlockChestScript : MonoBehaviour
 {
     public static bool chestIsUnlocked = false;
     public GameObject doorKey;
+    public GameObject Chest;
 
     void FixedUpdate()
     {
@@ -24,6 +25,12 @@ public class UnlockChestScript : MonoBehaviour
 
     public void OpenChest()
     {
-        doorKey.SetActive(true); 
+        doorKey.SetActive(true);
+        Invoke("deactivateChest", 1);
+    }
+
+    public void deactivateChest()
+    {
+        Chest.SetActive(false);
     }
 }

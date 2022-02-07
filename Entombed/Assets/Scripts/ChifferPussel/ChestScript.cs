@@ -20,6 +20,7 @@ public class ChestScript : MonoBehaviour
             this.GetComponent<BoxCollider>().enabled = false;
 
             Destroy(lockPart); //deletes the lockpart the player is holding in their hand
+            
         }        
     }
 }
