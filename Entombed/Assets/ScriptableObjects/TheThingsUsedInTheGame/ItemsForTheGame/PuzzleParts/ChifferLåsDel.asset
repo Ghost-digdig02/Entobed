@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: "ChifferL\xE5sDel"
   m_EditorClassIdentifier: 
   Id: -1
-  UiDispaly: {fileID: 0}
+  UiDispaly: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   type: 3
   description: 

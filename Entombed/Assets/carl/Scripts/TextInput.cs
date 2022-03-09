@@ -5,23 +5,34 @@ using UnityEngine.UI;
 
 
 public class TextInput : MonoBehaviour
-{
+{ 
+    Rigidbody rb;
+
+    public TextInput ti;
+
     public int maxMessages = 1;
 
+    public GameObject door;
     public GameObject textObject;
     public InputField textBox;
 
     [SerializeField]
     List<Message> messageList = new List<Message>();
+    GameObject closeddoor, openeddoor;
+
+    public static bool isdooropen = false;
 
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
+        closeddoor.SetActive (true);
+        openeddoor.SetActive (false);
     }
 
     
     void Update()
     {
+        // Gör så att spelaren kan klicka på enter för att börja skriva
         if(textBox.text != "")
         {
             if (Input.GetKeyDown(KeyCode.Return))
@@ -35,19 +46,26 @@ public class TextInput : MonoBehaviour
             if (!textBox.isFocused && Input.GetKeyDown(KeyCode.Return))
                 textBox.ActivateInputField();
         }
+        //if (textBox.text == "123")
+      //  {
+           ////// if (Input.GetKeyDown(KeyCode.Space))
+            //{
+             //   isdooropen = true;
+           //     SendMessageToPuzzle("wow de funka");
+         //       Debug.Log(":)");
+                
+       //     }
+            
+                
+     //   }
         if (textBox.text == "123")
         {
-           // if (Input.GetKeyDown(KeyCode.Space))
-            {
-                SendMessageToPuzzle("wow de funka");
-                Debug.Log("Space");
-            }
-                
+            FindObjectOfType<PusselEnd>().DuVann();
         }
-
         
     }
 
+    //tror inte detta behövs men jag vågar inte ta bort det
     public void SendMessageToPuzzle(string text)
     {
         if (messageList.Count >= maxMessages)

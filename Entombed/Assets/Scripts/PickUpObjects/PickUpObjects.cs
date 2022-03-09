@@ -10,9 +10,11 @@ public class PickUpObjects : MonoBehaviour
     public GameObject tempParent;
     public Transform guide;
     private bool mouseDown;
-    private bool holdingObject;
+    public static bool holdingObject;
+    public static bool addItemToInventory = false;
     
     public Collider guideCol;
+    public BoxCollider pickUpItemCol;
     
     void Start()
     {
@@ -23,10 +25,11 @@ public class PickUpObjects : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (holdingObject == true && Input.GetMouseButton(1)) //adds the item to the player's inventory if the player klicks the item while holding it
+        if (holdingObject == true && addItemToInventory == true) //adds the item to the player's inventory if the player klicks the item while holding it
         {
             guideCol.enabled = true; //this line allows the item the player is holding to enter the player's inventory (the inventory pick up system is based around colliders)
             holdingObject = false;
+            addItemToInventory = false;
             Debug.Log("adding item to inventory");
         }
 
@@ -59,13 +62,12 @@ public class PickUpObjects : MonoBehaviour
         item.transform.parent = tempParent.transform;
 
         item.transform.position = guide.transform.position;
-        item.transform.localPosition = new Vector3(0, 0, -9); 
+        item.transform.localPosition = new Vector3(8, 2, -1); //this is the offset from the guide position
         item.transform.rotation = guide.transform.rotation;
 
         holdingObject = true;
 
-        Debug.Log("holding item");
-        Debug.Log(item.transform.position);
+        pickUpItemCol.enabled = true;
     }
 
     void LetGoOfItem() //this void allows the player to put the item back down
@@ -74,13 +76,14 @@ public class PickUpObjects : MonoBehaviour
 
         item.GetComponent<Rigidbody>().useGravity = true;
         item.GetComponent<Rigidbody>().isKinematic = false;
-        item.GetComponent<SphereCollider>().enabled = true;
+        item.GetComponent<Collider>().enabled = true;
 
         item.transform.parent = null;
         item.transform.position = guide.transform.position;
 
         holdingObject = false;
-        Debug.Log("letting go of item");
+
+        pickUpItemCol.enabled = false;
     }
 
 }
