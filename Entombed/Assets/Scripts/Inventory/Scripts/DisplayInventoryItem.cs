@@ -15,7 +15,7 @@ public class DisplayInventoryItem : MonoBehaviour
     public GameObject inventoryPrefab; //we only use one single prefab for all items, we only switch the sprite
     public InventoryObject inventory;
     [SerializeField]
-    private int X_start;
+    private int X_start; 
     [SerializeField]
     private int Y_start;
     [SerializeField]
