@@ -36,7 +36,7 @@ public class doorControl : MonoBehaviour
     private void DetectObject()
     {
 
-        Ray ray= mainCamera.ScreenPointToRay
+        //Ray ray= mainCamera.ScreenPointToRay
 
     }
 
