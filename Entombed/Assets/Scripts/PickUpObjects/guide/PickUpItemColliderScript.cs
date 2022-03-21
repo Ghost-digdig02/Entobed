@@ -12,9 +12,9 @@ public class PickUpItemColliderScript : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if(PickUpObjects.holdingObject == true)
+        if(PickUpObjectsBaseScript.holdingObject == true)
         {
-            PickUpObjects.addItemToInventory = true;
+            PickUpObjectsBaseScript.addItemToInventory = true;
         }
     }
 }
