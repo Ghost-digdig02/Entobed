@@ -633,7 +633,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4352da3046452148bd5a99279703a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 274787779}
   tempParent: {fileID: 874980785}
   guide: {fileID: 874980786}
   guideCol: {fileID: 874980787}
@@ -1507,7 +1506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4352da3046452148bd5a99279703a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 771475890}
   tempParent: {fileID: 874980785}
   guide: {fileID: 874980786}
   guideCol: {fileID: 874980787}
@@ -2509,6 +2507,7 @@ GameObject:
   - component: {fileID: 1648169079}
   - component: {fileID: 1648169082}
   - component: {fileID: 1648169083}
+  - component: {fileID: 1648169084}
   m_Layer: 0
   m_Name: Item
   m_TagString: Untagged
@@ -2569,7 +2568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4352da3046452148bd5a99279703a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 1648169078}
   tempParent: {fileID: 210193370}
   guide: {fileID: 210193371}
   guideCol: {fileID: 497871116}
@@ -2590,6 +2588,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1648169084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648169078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1974f9cd980842439ab8c32bf5c7c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempParent: {fileID: 210193370}
+  guide: {fileID: 210193371}
+  guideCol: {fileID: 497871116}
+  pickUpItemCol: {fileID: 497871116}
+  thisItem: {fileID: 1648169078}
 --- !u!1 &1680663049
 GameObject:
   m_ObjectHideFlags: 0
