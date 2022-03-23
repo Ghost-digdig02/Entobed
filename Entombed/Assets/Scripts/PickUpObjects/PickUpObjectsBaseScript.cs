@@ -6,6 +6,7 @@ using UnityEngine;
 /// </summary>
 public class PickUpObjectsBaseScript : MonoBehaviour
 {
+    private float throwforce = 1000;
     private GameObject[] Items = new GameObject[2];
     public GameObject tempParent;
     public Transform guide;
@@ -18,7 +19,7 @@ public class PickUpObjectsBaseScript : MonoBehaviour
     
     void Start()
     {
-        Items[1].GetComponent<Rigidbody>().useGravity = false;
+        foreach (GameObject _item in Items) { Items[1].GetComponent<Rigidbody>().useGravity = false; }
         mouseDown = false;
         holdingObject = false;
     }
@@ -38,6 +39,7 @@ public class PickUpObjectsBaseScript : MonoBehaviour
     protected void HoldItem(GameObject item) //this void allowes the player to pick up an item (it changes the position of the item the player clicked to where the guide is (the player's "hand")
     {
         item.GetComponent<Rigidbody>().useGravity = false;
+        item.GetComponent<Rigidbody>().detectCollisions = true;
         item.GetComponent<Rigidbody>().isKinematic = true;
 
         item.transform.parent = tempParent.transform;
@@ -54,17 +56,20 @@ public class PickUpObjectsBaseScript : MonoBehaviour
     protected void LetGoOfItem(GameObject item) //this void allows the player to put the item back down
     {
         guideCol.enabled = false;
-
+        
         item.GetComponent<Rigidbody>().useGravity = true;
         item.GetComponent<Rigidbody>().isKinematic = false;
-        item.GetComponent<Collider>().enabled = true;
+        item.GetComponent<Rigidbody>().detectCollisions = false;
 
         item.transform.parent = null;
         item.transform.position = guide.transform.position;
+
+        item.GetComponent<Rigidbody>().AddForce(guide.transform.forward * throwforce);
 
         holdingObject = false;
 
         pickUpItemCol.enabled = false;
     }
+
 
 }
