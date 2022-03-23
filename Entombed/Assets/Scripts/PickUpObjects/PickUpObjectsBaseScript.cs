@@ -4,12 +4,12 @@ using UnityEngine;
 /// <summary>
 /// Add this sctipt to the Item you want to be able to pick up
 /// </summary>
-public class PickUpObjects : MonoBehaviour
+public class PickUpObjectsBaseScript : MonoBehaviour
 {
-    public GameObject item;
+    private GameObject[] Items = new GameObject[2];
     public GameObject tempParent;
     public Transform guide;
-    private bool mouseDown;
+    protected bool mouseDown;
     public static bool holdingObject;
     public static bool addItemToInventory = false;
     
@@ -18,33 +18,14 @@ public class PickUpObjects : MonoBehaviour
     
     void Start()
     {
-        item.GetComponent<Rigidbody>().useGravity = false;
+        Items[1].GetComponent<Rigidbody>().useGravity = false;
         mouseDown = false;
         holdingObject = false;
     }
 
-    private void FixedUpdate()
-    {
-        if (holdingObject == true && addItemToInventory == true) //adds the item to the player's inventory if the player klicks the item while holding it
-        {
-            guideCol.enabled = true; //this line allows the item the player is holding to enter the player's inventory (the inventory pick up system is based around colliders)
-            holdingObject = false;
-            addItemToInventory = false;
-            Debug.Log("adding item to inventory");
-        }
 
-        if(mouseDown == true && holdingObject == false) //is used if the player clicks on an item the want to pick up
-        {
-            HoldItem();
-        }
 
-        if(mouseDown == false && holdingObject == true) //is used when the player doesn't want to hold an object anymore
-        {
-            LetGoOfItem();
-        }
-    }
-
-    void OnMouseDown() //this void is used when the player clicks on an object
+    protected void OnMouseDown() //this void is used when the player clicks on an object
     {
         if (mouseDown == true) { mouseDown = false;}
         else { 
@@ -54,7 +35,7 @@ public class PickUpObjects : MonoBehaviour
 
     }
 
-    void HoldItem() //this void allowes the player to pick up an item (it changes the position of the item the player clicked to where the guide is (the player's "hand")
+    protected void HoldItem(GameObject item) //this void allowes the player to pick up an item (it changes the position of the item the player clicked to where the guide is (the player's "hand")
     {
         item.GetComponent<Rigidbody>().useGravity = false;
         item.GetComponent<Rigidbody>().isKinematic = true;
@@ -70,7 +51,7 @@ public class PickUpObjects : MonoBehaviour
         pickUpItemCol.enabled = true;
     }
 
-    void LetGoOfItem() //this void allows the player to put the item back down
+    protected void LetGoOfItem(GameObject item) //this void allows the player to put the item back down
     {
         guideCol.enabled = false;
 
