@@ -31,5 +31,5 @@ public class PickUpItemChildScript : PickUpObjectsBaseScript
     private void OnCollisionEnter(Collision collision)
     {
         LetGoOfItem(thisItem);
-    }
+       }
 }
