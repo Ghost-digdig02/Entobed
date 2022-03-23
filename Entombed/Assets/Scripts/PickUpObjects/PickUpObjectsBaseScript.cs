@@ -19,7 +19,7 @@ public class PickUpObjectsBaseScript : MonoBehaviour
     
     void Start()
     {
-        foreach (GameObject _item in Items) { Items[1].GetComponent<Rigidbody>().useGravity = false; }
+        // foreach (GameObject _item in Items) { Items[1].GetComponent<Rigidbody>().useGravity = false; }
         mouseDown = false;
         holdingObject = false;
     }
@@ -36,17 +36,17 @@ public class PickUpObjectsBaseScript : MonoBehaviour
 
     }
 
-    protected void HoldItem(GameObject item) //this void allowes the player to pick up an item (it changes the position of the item the player clicked to where the guide is (the player's "hand")
+    protected void HoldItem(GameObject _item) //this void allowes the player to pick up an item (it changes the position of the item the player clicked to where the guide is (the player's "hand")
     {
-        item.GetComponent<Rigidbody>().useGravity = false;
-        item.GetComponent<Rigidbody>().detectCollisions = true;
-        item.GetComponent<Rigidbody>().isKinematic = true;
+        _item.GetComponent<Rigidbody>().useGravity = false;
+        _item.GetComponent<Rigidbody>().detectCollisions = true;
+        _item.GetComponent<Rigidbody>().isKinematic = true;
 
-        item.transform.parent = tempParent.transform;
+        _item.transform.parent = tempParent.transform;
 
-        item.transform.position = guide.transform.position;
-        item.transform.localPosition = new Vector3(8, 2, -1); //this is the offset from the guide position
-        item.transform.rotation = guide.transform.rotation;
+        _item.transform.position = guide.transform.position;
+        _item.transform.localPosition = new Vector3(8, 2, -1); //this is the offset from the guide position
+        _item.transform.rotation = guide.transform.rotation;
 
         holdingObject = true;
 
@@ -71,5 +71,5 @@ public class PickUpObjectsBaseScript : MonoBehaviour
         pickUpItemCol.enabled = false;
     }
 
-
+    
 }
