@@ -36,7 +36,7 @@ public class PickUpObjectsBaseScript : MonoBehaviour
 
     }
 
-    protected void HoldItem(GameObject _item) //this void allowes the player to pick up an item (it changes the position of the item the player clicked to where the guide is (the player's "hand")
+    public void HoldItem(GameObject _item) //this void allowes the player to pick up an item (it changes the position of the item the player clicked to where the guide is (the player's "hand")
     {
         _item.GetComponent<Rigidbody>().useGravity = false;
         _item.GetComponent<Rigidbody>().detectCollisions = true;
@@ -53,7 +53,7 @@ public class PickUpObjectsBaseScript : MonoBehaviour
         pickUpItemCol.enabled = true;
     }
 
-    protected void LetGoOfItem(GameObject item) //this void allows the player to put the item back down
+    public void LetGoOfItem(GameObject item) //this void allows the player to put the item back down
     {
         guideCol.enabled = false;
         
