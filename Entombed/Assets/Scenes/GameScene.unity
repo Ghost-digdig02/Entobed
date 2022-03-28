@@ -761,6 +761,32 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -8665374912803100077, guid: a18c68353ed8f0445b90577cef4f9de9, type: 3}
   m_PrefabInstance: {fileID: 1064276116}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &13576675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13576673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d75ea9a1fd9e2f34dbf8db23069e20f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Door: {fileID: 13576673}
+--- !u!65 &13576676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13576673}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9002899, y: 13.169, z: 8.124078}
+  m_Center: {x: 0.33248967, y: 6.5845, z: -4.0560145}
 --- !u!64 &13576677
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -794,6 +820,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &13576679
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13576673}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9002899, y: 13.169, z: 8.124078}
+  m_Center: {x: 0.33248967, y: 6.5845, z: -4.0560145}
 --- !u!1001 &13919191
 PrefabInstance:
   m_ObjectHideFlags: 0
