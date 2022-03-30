@@ -7,13 +7,15 @@ public class OpenDoorScript : MonoBehaviour
     public GameObject Door;
     private bool doorHasBeenClicked = false;
     private bool doorIsOpen = false;
-    private float defaultRotation;
-    private float opendDoorRotation;
+    //private float defaultRotation;
+    //private float opendDoorRotation;
+
+    private float doorOpeningSpeed = 0.3f;
 
     private void Start()
     {
-        defaultRotation = Door.transform.rotation.y;
-        opendDoorRotation = Door.transform.rotation.y + 90;
+        //defaultRotation = Door.transform.rotation.y;
+        //opendDoorRotation = Door.transform.rotation.y + 90;
     }
     private void Update()
     {
@@ -30,10 +32,10 @@ public class OpenDoorScript : MonoBehaviour
     private void OpenDoor()
     {
         Debug.Log("opening Door");
-        Door.transform.Rotate(0, opendDoorRotation, 0);
+        //Door.transform.Rotate(0, opendDoorRotation, 0);
+        Door.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, -140, 0), doorOpeningSpeed * Time.deltaTime);
         Invoke("ResetBool", 1f);
         Invoke("DoorIsOpen", 1);
-        Debug.Log(Door.transform.rotation.y);
 
     }
 
@@ -42,7 +44,8 @@ public class OpenDoorScript : MonoBehaviour
     {
         Debug.Log("closing Door");
         doorIsOpen = false;
-        Door.transform.Rotate(0, defaultRotation, 0);
+        //Door.transform.Rotate(0, defaultRotation, 0);
+        Door.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 140, 0), doorOpeningSpeed * Time.deltaTime);
         Invoke("ResetBool", 1f);
         Invoke("DoorIsOpen", 1);
     }
