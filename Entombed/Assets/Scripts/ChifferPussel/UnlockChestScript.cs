@@ -9,6 +9,7 @@ using UnityEngine;
 public class UnlockChestScript : MonoBehaviour
 {
     public static bool chestIsUnlocked = false;
+    private bool chestHasBeenOpened = false;
     public GameObject doorKey;
     public GameObject[] Chest;
 
@@ -25,10 +26,11 @@ public class UnlockChestScript : MonoBehaviour
 
     public void OpenChest()
     {
-        doorKey.SetActive(true);
+        if (chestHasBeenOpened = false) { doorKey.SetActive(true); }
         foreach(GameObject chestpart in Chest)
         {
             chestpart.SetActive(false); 
         }
+        chestHasBeenOpened = true;
     }
 }
