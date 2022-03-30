@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.0754717, g: 0.040346503, b: 0.040346503, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.06
@@ -49324,6 +49324,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5777374554892698966, guid: d393d14632a1780408d9d897dcad364c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a67ee42691724b4b8b0545845a29632, type: 2}
     - target: {fileID: 5777374555939456950, guid: d393d14632a1780408d9d897dcad364c, type: 3}
       propertyPath: Chest
       value: 
@@ -67952,7 +67956,7 @@ Transform:
   m_LocalScale: {x: 0.000029376997, y: 1.4688499, z: 1.4688499}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1693342863
 PrefabInstance:
