@@ -21156,7 +21156,7 @@ MeshCollider:
   m_GameObject: {fileID: 485352392}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -26080,7 +26080,7 @@ MeshCollider:
   m_GameObject: {fileID: 600617218}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -68053,7 +68053,7 @@ Transform:
   m_LocalScale: {x: 0.000029376997, y: 1.4688499, z: 1.4688499}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1693342863
 PrefabInstance:
