@@ -7,14 +7,10 @@ public class OpenDoorScript : MonoBehaviour
     public GameObject Door;
     private bool doorHasBeenClicked = false;
     private bool doorIsOpen = false;
-    private float defaultRotation;
-    private float opendDoorRotation;
 
-    private void Start()
-    {
-        defaultRotation = Door.transform.rotation.y;
-        opendDoorRotation = Door.transform.rotation.y + 90;
-    }
+
+    private float doorOpeningSpeed = 0.4f;
+
     private void Update()
     {
         if (doorHasBeenClicked == true && doorIsOpen == false) { OpenDoor(); }
@@ -27,32 +23,32 @@ public class OpenDoorScript : MonoBehaviour
     }
 
     //method to open the door
-    private void OpenDoor()
+    protected void OpenDoor()
     {
-        Debug.Log("opening Door");
-        Door.transform.Rotate(0, opendDoorRotation, 0);
-        Invoke("ResetBool", 1f);
-        Invoke("DoorIsOpen", 1);
-        Debug.Log(Door.transform.rotation.y);
+        //Debug.Log("opening Door");
+        Door.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, -140, 0), doorOpeningSpeed * Time.deltaTime);
+        //Quaternion.Slerp will rotate the object from one position to another during a set time. the Quaternion.Euler(X,Y,Z) is how you want the door to rotate
+        Invoke("ResetBool", 0.5f);
+        Invoke("DoorIsOpen", 0.5f);
 
     }
 
     //method to close the door
-    private void CloseDoor()
+    protected void CloseDoor()
     {
         Debug.Log("closing Door");
         doorIsOpen = false;
-        Door.transform.Rotate(0, defaultRotation, 0);
-        Invoke("ResetBool", 1f);
-        Invoke("DoorIsOpen", 1);
+        Door.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, -140, 0), doorOpeningSpeed * Time.deltaTime);
+        Invoke("ResetBool", 0.5f);
+        Invoke("DoorIsOpen", 0.5f);
     }
 
-    private void ResetBool()
+    protected void ResetBool()
     {
         doorHasBeenClicked = false;
     }
 
-    private void DoorIsOpen()
+    protected void DoorIsOpen()
     {
         if(doorIsOpen == true) { doorIsOpen = false; }
         else { doorIsOpen = true; }
