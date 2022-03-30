@@ -26,7 +26,7 @@ public class UnlockChestScript : MonoBehaviour
 
     public void OpenChest()
     {
-        if (chestHasBeenOpened = false) { doorKey.SetActive(true); }
+        if (chestHasBeenOpened == false) { doorKey.SetActive(true); }
         foreach(GameObject chestpart in Chest)
         {
             chestpart.SetActive(false); 

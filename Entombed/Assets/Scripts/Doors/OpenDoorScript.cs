@@ -13,8 +13,8 @@ public class OpenDoorScript : MonoBehaviour
 
     private void Update()
     {
-        if (doorHasBeenClicked == true && doorIsOpen == false) { OpenDoor(); }
-        if(doorHasBeenClicked == true && doorIsOpen == true) { CloseDoor(); }
+        if (doorHasBeenClicked == true && doorIsOpen == false) { OpenDoor(Door); }
+        if(doorHasBeenClicked == true && doorIsOpen == true) { CloseDoor(Door); }
     }
     //method to detect id the player is clicking on the door
     private void OnMouseUp()
@@ -23,10 +23,10 @@ public class OpenDoorScript : MonoBehaviour
     }
 
     //method to open the door
-    protected void OpenDoor()
+    protected void OpenDoor(GameObject Door)
     {
         //Debug.Log("opening Door");
-        Door.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, -140, 0), doorOpeningSpeed * Time.deltaTime);
+        Door.transform.rotation = Quaternion.Slerp(Door.transform.rotation, Quaternion.Euler(0, -140, 0), doorOpeningSpeed * Time.deltaTime);
         //Quaternion.Slerp will rotate the object from one position to another during a set time. the Quaternion.Euler(X,Y,Z) is how you want the door to rotate
         Invoke("ResetBool", 0.5f);
         Invoke("DoorIsOpen", 0.5f);
@@ -34,11 +34,11 @@ public class OpenDoorScript : MonoBehaviour
     }
 
     //method to close the door
-    protected void CloseDoor()
+    protected void CloseDoor(GameObject Door)
     {
         Debug.Log("closing Door");
         doorIsOpen = false;
-        Door.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, -140, 0), doorOpeningSpeed * Time.deltaTime);
+        Door.transform.rotation = Quaternion.Slerp(Door.transform.rotation, Quaternion.Euler(0, -140, 0), doorOpeningSpeed * Time.deltaTime);
         Invoke("ResetBool", 0.5f);
         Invoke("DoorIsOpen", 0.5f);
     }

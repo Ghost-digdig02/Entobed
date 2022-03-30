@@ -9,6 +9,7 @@ public class UnlockTheDoorScript : OpenDoorScript
 {
     public static bool theDoorIsUnlocked = false;
     public static bool theDoorHasBeenClicked = false;
+    public GameObject Door;
 
     private bool doorHasBeenClicked = false;
     private bool doorIsOpen = false;
@@ -20,8 +21,8 @@ public class UnlockTheDoorScript : OpenDoorScript
         if(KeyToLockedDoorSCript.keyHasbeenPickedUp == true) { theDoorIsUnlocked = true; }
         if (theDoorIsUnlocked == true)
         {
-            if (doorHasBeenClicked == true && doorIsOpen == false) { OpenDoor(); }
-            if (doorHasBeenClicked == true && doorIsOpen == true) { CloseDoor(); }
+            if (doorHasBeenClicked == true && doorIsOpen == false) { OpenDoor(Door); }
+            if (doorHasBeenClicked == true && doorIsOpen == true) { CloseDoor(Door); }
         }
     }
 
