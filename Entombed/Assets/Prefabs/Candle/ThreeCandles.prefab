@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8921710123639422893, guid: 72456f1a54513954db07596a95f30f24, type: 3}
+      propertyPath: m_Range
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8921710125203789228, guid: 72456f1a54513954db07596a95f30f24, type: 3}
       propertyPath: m_Name
       value: ThreeCandles
